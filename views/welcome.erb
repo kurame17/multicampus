@@ -6,8 +6,19 @@
         </title>
     </head>
     <body>
-        <h1>
-            <%= @name%> !!!!!!!!!! Welcome !!!!!!!!!!!
-        </h1>
+        <% if @name == 'LJH' %>
+            <h1>
+                기가막힌 <%= @name%> !!!!!!!!!! Welcome !!!!!!!!!!!
+            </h1>            
+        <% elsif @name == 'JH' %>    
+            <h1>
+                캬캬캬 <%= @name%> !!!!!!!!!! Welcome !!!!!!!!!!!
+            </h1>
+        <% end %>
+        <% 5.times do %>
+            <h1>
+                <%= @name%>
+            </h1> 
+        <% end %>
     </body>
 </html>

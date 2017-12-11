@@ -2,7 +2,7 @@ require 'sinatra'
 
 #localhost:4567
 get '/' do 
-    "Hello world!"
+    send_file 'index.html'
 end
 
 #localhost:4567/welcome
@@ -20,3 +20,19 @@ end
 get '/6' do
     erb :hello
 end
+
+get '/lotto' do
+    @lotto = (1..45).to_a.sample(6)
+    erb :lotto
+end
+
+get '/search' do
+    erb :search
+end
+
+get '/google' do
+    @q = params[:q]
+    @name = params[:n]
+    erb :google
+end
+    
