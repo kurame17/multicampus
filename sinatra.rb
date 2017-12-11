@@ -9,3 +9,7 @@ end
 get '/welcome' do
     send_file 'welcome.html'
 end
+
+get '/6' do
+    erb :hello
+end
