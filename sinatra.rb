@@ -36,3 +36,12 @@ get '/google' do
     erb :google
 end
     
+get '/lunch' do
+    @lunch = ["멀캠20층", "순남시래기", "명동칼국수", "시골집", "강남목장"].sample
+    @img_url = {
+        "멀캠20층" => "https://scontent-sea1-1.cdninstagram.com/t51.2885-15/s480x480/e35/20987024_1431422050287339_2004189507347283968_n.jpg?ig_cache_key=MTU4NzUwMTg2NjEwNzc3MTI0Nw%3D%3D.2",
+        "순남시래기" => "http://cfile25.uf.tistory.com/image/235FF03455A3421504721F", 
+        "명동칼국수" => "http://cfs11.tistory.com/image/1/tistory/2008/10/27/16/54/490573abca23b"
+    }
+    erb :lunch
+end
