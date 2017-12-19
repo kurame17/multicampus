@@ -1,6 +1,6 @@
 class PostController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
 
   def new
@@ -15,5 +15,9 @@ class PostController < ApplicationController
     # post.content = params[:content]
     # post.save
     redirect_to '/'
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 end
