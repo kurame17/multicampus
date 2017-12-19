@@ -1,6 +1,15 @@
 <form action = "/post/create">
-  작성자 : <input type='text' name='username'><br>
-  제목 : <input type='text' name='title' placeholder='제목을 입력하세요'><br>
-  내용 : <textarea name='content'></textarea><br>
+  <div class="form-group">
+    <label>작성자</label>
+    <input type="text" name='username' class="form-control" id="exampleFormControlInput1" placeholder="이름을 입력하세요.">
+  </div>
+  <div class="form-group">
+    <label>제목</label>
+    <input type="text" name='title' class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력하세요.">
+  </div>
+  <div class="form-group">
+    <label>내용</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name='content' rows="15"></textarea>
+  </div>
   <input type='submit' value='가즈아!'><br>
 </form>

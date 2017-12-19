@@ -1,9 +1,7 @@
-<div style="text-align:center">
-  <h2>게시판</h2>
+<div style="text-align:center;">
+  <h2 style="margin-top: 10px;">잡담판 ver-1.0</h2>
 </div>
-<div style="text-align:right">
-  <p><a class="btn btn-primary ml-auto" role="button" href="/post/new">글쓰기</a></p>
-</div>
+<br /><br />
 <table class="table">
   <thead>
     <tr>
@@ -13,6 +11,7 @@
       <th scope="col">내용</th>
       <th scope="col">작성시간</th>
       <th scope="col">보기</th>
+      <th scope="col">삭제</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +23,12 @@
       <td><%= post.content %></td>
       <td><%= post.created_at %></td>
       <td><a href=/post/show/<%= post.id %>>보러가기</a></td>
+      <td><a href=/post/destroy/<%= post.id %>>삭제하기</a></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<br />
+<div style="text-align:right">
+  <p><a class="btn btn-primary ml-auto" role="button" href="/post/new">글쓰기</a></p>
+</div>
