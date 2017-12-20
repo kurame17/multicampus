@@ -26,4 +26,15 @@ class PostController < ApplicationController
     post.destroy
     redirect_to '/'
   end
+
+  def modify
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(username: params[:username], title: params[:title], content: params[:content])
+    redirect_to "/post/show/#{params[:id]}" 
+    # 문자열 안에 변수 넣으려면 "" 해야함
+  end
 end

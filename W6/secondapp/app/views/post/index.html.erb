@@ -9,9 +9,9 @@
       <th scope="col">작성자</th>
       <th scope="col">제목</th>
       <th scope="col">내용</th>
-      <th scope="col">작성시간</th>
       <th scope="col">보기</th>
       <th scope="col">삭제</th>
+      <th scope="col">수정</th>
     </tr>
   </thead>
   <tbody>
@@ -21,14 +21,14 @@
       <td><%= post.username %></td>
       <td><%= post.title %></td>
       <td><%= post.content %></td>
-      <td><%= post.created_at %></td>
-      <td><a href=/post/show/<%= post.id %>>보러가기</a></td>
-      <td><a href=/post/destroy/<%= post.id %>>삭제하기</a></td>
+      <td><a href=/post/show/<%= post.id %>>보기</a></td>
+      <td><a href=/post/destroy/<%= post.id %>>삭제</a></td>
+      <td><a href=/post/modify/<%= post.id %>>수정</a></td>
     </tr>
     <% end %>
   </tbody>
 </table>
 <br />
 <div style="text-align:right">
-  <p><a class="btn btn-primary ml-auto" role="button" href="/post/new">글쓰기</a></p>
+  <p><a class="btn btn-primary ml-auto" role="button" href="/post/new">작성</a></p>
 </div>
