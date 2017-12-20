@@ -15,6 +15,7 @@ class PostController < ApplicationController
     # post.content = params[:content]
     # post.save
     redirect_to '/'
+    # @name = params[:authenticity_token]
   end
 
   def show

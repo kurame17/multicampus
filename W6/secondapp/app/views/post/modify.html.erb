@@ -1,5 +1,5 @@
 <!-- action에 update로 바꾸고, value에 기존 값들 추가해야함. -->
-<form action = "/post/update/<%=@post.id%>">
+<form action = "/post/update/<%=@post.id%>" method="post">
   <div class="form-group">
     <label>작성자</label>
     <input value="<%=@post.username%>" type="text" name='username' class="form-control" id="exampleFormControlInput1" placeholder="이름을 입력하세요.">
@@ -12,5 +12,6 @@
     <label>내용</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name='content' rows="15"><%=@post.content%></textarea>
   </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <input type='submit' value='가즈아!'><br>
 </form>

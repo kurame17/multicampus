@@ -8,8 +8,6 @@
       <th scope="col">id</th>
       <th scope="col">작성자</th>
       <th scope="col">제목</th>
-      <th scope="col">내용</th>
-      <th scope="col">보기</th>
       <th scope="col">삭제</th>
       <th scope="col">수정</th>
     </tr>
@@ -19,10 +17,20 @@
     <tr>
       <th scope="row"><%= post.id %></th>
       <td><%= post.username %></td>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><a href=/post/show/<%= post.id %>>보기</a></td>
-      <td><a href=/post/destroy/<%= post.id %>>삭제</a></td>
+      <td>
+          <div class="item">
+            <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion<%= post.id %>" aria-expanded="false" aria-controls="exampleAccordion<%= post.id %>">
+              <%= post.title %>
+            </a>
+            <div id="exampleAccordion<%= post.id %>" class="collapse" role="tabpanel">
+              <p class="mb-3">
+                <%= post.content %>
+              </p>
+            </div>
+          </div>
+      </td>
+      <%# get방식으로 요청 보내는게 아니고 따로 메소드를 만듦으로서 주소창에서 쳐서 못 지움 %>
+      <td><a data-confirm="삭제하시겠습니까?" data-method="delete" href=/post/destroy/<%= post.id %>>삭제</a></td>
       <td><a href=/post/modify/<%= post.id %>>수정</a></td>
     </tr>
     <% end %>
