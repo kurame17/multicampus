@@ -1,0 +1,22 @@
+<p><%= @post.id %></p>
+<p><%= @post.username %></p>
+<p><%= @post.title %></p>
+<p><%= @post.content %></p>
+<p><%= @post.created_at %></p>
+
+<hr />
+<h4> COMMENT </h4>
+<form action="/post/add_comment">
+  <input type="text" name="content" placeholder="Insert Comment"/>
+  <input type="hidden" name="id" value="<%=@post.id%>"/>
+  <input type="submit"/>
+</form>
+
+<hr />
+<% @post.comments.reverse.each_with_index do |comment, idx| %>
+<%#  @post.comments 할때 자동으로 post에 속한 comment 전부가 아니라 comment의 post_id가 해당 포스트와 맞는 것만 포함되도록 걸러짐. %>
+<%# Model에서 belongs to, has many 할때 반드시 하위에서 상위의 id를 포함해야 지가 알아서 걸러줌 %>
+  <p><%=@post.comments.length - idx%>번째 댓글: <%= comment.content %></p>
+<% end %>
+
+
